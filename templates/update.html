@@ -1,9 +1,10 @@
-{% extends "base.html" %} {%block head%} {%endblock%} {%block body%}
-<div class="update">
-  <h1>Update Task</h1>
-  <form action="/update/{{task.id}}" method="post">
-    <input type="text" name="update" id="update" value="{{task.content}}" />
-    <input type="submit" value="add task" />
+{% extends "base.html" %} {% block body %}
+<div class="update-box">
+  <h1>✏️ Update Task</h1>
+  <form action="/update/{{ task.id }}" method="POST">
+    <input type="text" name="update" value="{{ task.content }}" required />
+    <button type="submit">Update Task</button>
   </form>
+  <a href="/" class="back-link">← Back to list</a>
 </div>
-{%endblock%}
+{% endblock %}
